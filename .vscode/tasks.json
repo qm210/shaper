@@ -4,9 +4,9 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "cmake --build ${cmake.buildDirectory} --config Debug --target TARGET_TO_BUILD -- -j 4",
+            "command": "cmake --build ${cmake.buildDirectory} --config Debug --target ${command:cmake.launchTargetPath} -- -j 4",
             "options": {
-                "cwd": "${cmake.buildDirectory}"
+                "cwd": "${workspaceFolder}/build"
             },
             "group": {
                 "kind": "build",
