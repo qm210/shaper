@@ -37,12 +37,13 @@ set(sources
 include(CTest)
 enable_testing()
 
-add_executable(${CMAKE_PROJECT_NAME} WIN32 ${sources})
+add_executable(${CMAKE_PROJECT_NAME} ${sources})
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
     "glad"
     ${GLFW}
     ${OPENGL_gl_LIBRARY}
+    imm32.lib
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

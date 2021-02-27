@@ -126,10 +126,16 @@ int main(int argc, char *argv[])
     glViewport(0, 0, actualWindowWidth, actualWindowHeight);
 
     glClearColor(backgroundR, backgroundG, backgroundB, 1.0f);
+
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init(glsl_version.c_str());
+
     // --- rendering loop
     while (!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        ImGui_ImplGlfw_NewFrame();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
