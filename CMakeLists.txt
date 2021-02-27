@@ -37,7 +37,7 @@ set(sources
 include(CTest)
 enable_testing()
 
-add_executable(${CMAKE_PROJECT_NAME} ${sources})
+add_executable(${CMAKE_PROJECT_NAME} WIN32 ${sources})
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
     "glad"
